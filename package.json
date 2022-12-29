@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/fox19960910/blog#readme",
   "lint-staged": {
-    "src/**/*.{js,json,scss,hbs}": "prettier --single-quote --trailing-comma all tab-width 4 --write",
+    "src/**/*.{js,json,scss,hbs}": "prettier --write",
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
