@@ -7,8 +7,8 @@
     "start": "nodemon --config nodemonConfig.json  --inspect src/index.js",
     "watch": "node-sass -w src/resources/scss/index.scss src/public/css/index.css",
     "prettierrc": "lint-staged",
-    "prepare": "husky install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,13 @@
   },
   "homepage": "https://github.com/fox19960910/blog#readme",
   "lint-staged": {
-    "src/**/*.{js,json,scss,hbs}": "prettier --single-quote --trailing-comma all tab-width 4 --write"
+    "src/**/*.{js,json,scss,hbs}": "prettier --single-quote --trailing-comma all tab-width 4 --write",
+    "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.6"
+    "express-handlebars": "^6.0.6",
+    "mongoose": "^6.8.1"
   },
   "devDependencies": {
     "husky": "^8.0.2",
