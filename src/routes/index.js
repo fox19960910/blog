@@ -1,8 +1,8 @@
-const newRouter = require('../routes/news.router');
-const siteRouter = require('../routes/site.router');
+const blogRouter = require('../routes/blog.router')
+const siteRouter = require('../routes/site.router')
 function route(app) {
-  app.use('/news', newRouter);
-  app.use('/', siteRouter);
+    app.use('/blog', blogRouter)
+    app.use('/', siteRouter)
 }
 
-module.exports = route;
+module.exports = route

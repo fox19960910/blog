@@ -1,15 +1,16 @@
 const BlogPost = require('../models/Post')
+
+const { arrayMongooseToObject } = require('../../utils/mongoose')
 class SiteController {
     // [GET] /
-    index(req, res) {
-        BlogPost.find({}, function (err, blogPost) {
-            if (!err) {
-                res.json(blogPost)
-                return
-            }
-            res.status(400).json({ err: 'ERORR!!!' })
-        })
-        // res.render("home");
+    index(req, res, next) {
+        BlogPost.find({})
+            .then((blogPost) =>
+                res.render('home', {
+                    blogPost: arrayMongooseToObject(blogPost),
+                })
+            )
+            .catch(next) // catch(err => next(err))
     }
 
     // [GET] /search/:slug
